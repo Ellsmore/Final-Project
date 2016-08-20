@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<h1>Shopping Cart</h1>
+
+<% @cart.line_items.each do |item| %>
+  <p> <%= item.quantity %> &times; <%= item.product.title %> </p>
+<% end %>
