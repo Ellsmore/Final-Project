@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="shopping-cart">
+    <div class="shopping-cart-header">
+      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge"> <%= cart.total_items %> </span>
+      <div class="shopping-cart-total">
+        <span class="lighter-text">Total:</span>
+        <span class="main-color-text"> <%= number_to_currency(cart.total_price) %> </span>
+      </div>
+    </div>
+
+    <ul class="shopping-cart-items">
+    <% @cart.line_items.each do |item| %>
+      <li class="clearfix">
+        <span class="item-name"> <%= item.product.title %> </span>
+        <span class="item-price"> <%= number_to_currency(item.total_price) %> </span>
+        <span class="item-quantity"> &times; <%= item.quantity %> </span>
+      </li>
+    <% end %>
+    </ul>
+
+    <a href="#" class="button">Checkout</a>
+
+    <%= button_to 'Empty cart', cart, :method => :delete, :confirm => 'Are you sure?' %>
+  </div>
+</div>

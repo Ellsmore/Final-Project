@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
+// External js being loaded - https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js

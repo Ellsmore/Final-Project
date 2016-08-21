@@ -1,0 +1,4 @@
+page.replace_html('cart', render(@cart))
+
+# page variable is an instance of a JavaScript generator (rails class that knows how to create JavaScript on the server and have it executed by the browser)
+#
