@@ -10,6 +10,7 @@
       </div>
     </div>
 
+<%# unless @cart.line_items.empty? %> 
     <ul class="shopping-cart-items">
     <% @cart.line_items.each do |item| %>
       <li class="clearfix">
@@ -18,7 +19,8 @@
         <span class="item-quantity"> &times; <%= item.quantity %> </span>
       </li>
     <% end %>
-    </ul>
+  </ul>
+<%# end %>
 
     <a href="#" class="button">Checkout</a>
 
