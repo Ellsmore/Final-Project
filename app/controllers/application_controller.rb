@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_filter :authorize
 
   private
 
@@ -10,7 +11,15 @@ class ApplicationController < ActionController::Base
   rescue ActiveRecord::RecordNotFound #If cart record is not found, new one created
     cart = Cart.create
     session[:cart_id] = cart.id
-    cart 
+    cart
   end
+
+  protected
+
+  def authorize
+    unless User.find_by_id(session[:user_id])
+      redirect_to login_url, :notice => "Please login."
+    end
+  end 
 
 end

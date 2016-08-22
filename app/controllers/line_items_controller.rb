@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :authorize, :only => :create 
 
   def index
     @line_items = LineItem.all
@@ -24,7 +25,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to(store_url) }
-        format.js # For AJAX requests 
+        format.js # For AJAX requests
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
