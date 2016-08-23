@@ -1,18 +1,70 @@
-$main-color: #6394F8;
-$light-text: #ABB0BE;
+@import 'variables';
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
-*, *:before, *:after {
-  box-sizing: border-box;
-}
+//-------- GENERAL --------//
 
 body {
-  font: 14px/22px "Lato", Arial, sans-serif;
-  background: #6394F8;
+  margin: 0 auto;
+  padding: 0;
+  margin: 0;
 }
+
+.product-button {
+  padding: 1vh 3vw;
+  font-size: 2em;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: white;
+  border: 5px solid black;
+  box-shadow: 0 9px black;
+  text-transform: uppercase;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 4vh;
+  left: 11vw;
+}
+
+.product-button:hover {
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
+}
+
+//-------- header --------//
+header {
+  background-color: $header-color;
+  height: 10vh;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  max-height: 7vh;
+
+
+  .nav-cart-icon {
+    color: $header-text-color;
+    font-size: 2em;
+  }
+
+  .nav-badge {
+        background-color: $header-text-color;
+        border-radius: 10px;
+        color: $header-color;
+        display: inline-block;
+        font-size: 1em;
+        font-weight: 600;
+        line-height: 1;
+        padding: 3px 7px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+  }
+}
+
+
+
 
 .lighter-text {
   color: #ABB0BE;
@@ -24,7 +76,6 @@ body {
 
 nav {
   padding: 20px 0 40px 0;
-  background: #F8F8F8;
   font-size: 16px;
 
   .navbar-left {
@@ -38,10 +89,16 @@ nav {
 
     li {
       display: inline;
-      padding-left: 20px;
+      padding-left: 5%;
       a {
-        color: #777777;
+        color: $header-text-color;
         text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      a:hover {
+        text-decoration: none;
+        color: $header-text-color;
       }
     }
   }
@@ -133,7 +190,6 @@ nav {
   color: #515783;
   font-size: 24px;
   margin-right: 7px;
-  float: left;
 }
 
 .button {
@@ -156,4 +212,27 @@ nav {
   content: "";
   display: table;
   clear: both;
+}
+
+//--------- FOOTER ---------//
+
+footer {
+  background-color: $footer-color;
+  position:fixed;
+  bottom:0px;
+  height:10vh;
+  width:100%;
+
+  nav {
+    ul {
+      text-align: center;
+      li {
+        color: white;
+        font-size: 1em;
+      }
+      li:hover, li:active {
+        color: $footer-text-hover;
+      }
+    }
+  }
 }

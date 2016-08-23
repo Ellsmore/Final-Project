@@ -1,41 +1,24 @@
 <header>
   <nav>
     <div class="container">
+      <% if session[:user_id] %>
       <ul class="navbar-left">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li> <%= link_to 'Orders', orders_path %> </li>
+        <li> <%= link_to 'Products', products_path %> </li>
+        <li> <%= link_to 'Users', users_path %> </li>
+
       </ul> <!--end navbar-left -->
+      <% end %>
 
       <ul class="navbar-right">
-        <li><a href="#" id="cart-nav"><i class="fa fa-shopping-cart"></i> Cart <span class="badge"> <%= @cart.total_items %> </span></a></li>
-        <li>
-          <div class="container">
-            <div class="shopping-cart">
-              <div class="shopping-cart-header">
-                <i class="fa fa-shopping-cart cart-icon"></i><span class="badge"> <%= @cart.total_items %> </span>
-                <div class="shopping-cart-total">
-                  <span class="lighter-text">Total:</span>
-                  <span class="main-color-text"> <%= number_to_currency(@cart.total_price) %> </span>
-                </div>
-              </div>
-
-              <ul class="shopping-cart-items">
-              <% @cart.line_items.each do |item| %>
-                <li class="clearfix">
-                  <span class="item-name"> <%= item.product.title %> </span>
-                  <span class="item-price"> <%= number_to_currency(item.total_price) %> </span>
-                  <span class="item-quantity"> &times; <%= item.quantity %> </span>
-                </li>
-              <% end %>
-              </ul>
-
-        
-              <%= button_to 'Checkout', new_order_path, :method => :get, :class => "button" %>
-
-              <%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
-            </div>
-          </div>
-        </li>
+        <% if session[:user_id] %>
+          <li><%= link_to '<span class="glyphicon glyphicon-user"></span> My Account'.html_safe, admin_path %></li> <%# UPDATE LINK %>
+          <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Log Out'.html_safe, logout_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, login_path %></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_path %></li>
+          <li><i class="fa fa-shopping-cart nav-cart-icon"></i><span class="nav-badge"> <%= @cart.total_items %> </span></li>
+        <% end %>
       </ul> <!--end navbar-right -->
     </div> <!--end container -->
   </nav>

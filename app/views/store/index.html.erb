@@ -2,19 +2,22 @@
   <p id="notice"><%= notice %></p>
 <% end  %>
 
-<h1>Product Catalog</h1>
-
-<% @products.each do |product| %>
-  <div class="entry">
-    <h2> <%= product.title %> </h2>
-
-    <%= image_tag(product.image) %>
-
-    <p> <%= sanitize(product.description) %> </p> <%# sanitize allows us to safely add HTML stylings to make the descriptions more interesting for our customers. %>
-
-    <div class="price_line">
-      <span class="price"> <%= number_to_currency(product.price) %> </span>
-      <%= button_to 'Buy', line_items_path(:product_id => product), :remote => true %> <%# :remote => true for sending AJAX requests %>
-    </div>
-  </div>
-<% end  %>
+<div class="container row product-images-wrapper">
+  <% @products.each do |product| %>
+      <a href="<%= product_path(product.id) %>">
+      <article class="col-md-4 wrap">
+        <figure>
+          <img src='<%= product.image %>' alt="some_text" class="product-image" />
+        </figure>
+        <section class="text-container">
+          <h2><%= product.title %></h2>
+          <div> <%= truncate(product.description, :length => 20) %> </div>
+          <div><%= number_to_currency(product.price) %></div>
+          <button class="product-button">
+            Buy
+          </button>
+        </section>
+      </article>
+    </a>
+  <% end  %>
+</div>
