@@ -8,13 +8,7 @@ class User < ActiveRecord::Base
 
   validate :password_must_be_present
 
-  after_destroy :ensure_one_admin_is_present
 
-  def ensure_one_admin_is_present
-    if User.count.zero?
-      raise "Can't delete last user!"
-    end 
-  end
 
   def User.authenticate(name, password)
     if user = find_by_name(name)

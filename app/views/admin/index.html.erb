@@ -1,8 +1,66 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+<div id="admin-panel">
+  <span class="glyphicon glyphicon-user admin-logo" aria-hidden="true"></span>
 
-<p>
-  It's <%= Time.now %> <br>
+  <h1>Admin Panel</h1>
 
-  We have <%= pluralize(@total_orders, 'order') %>.
-</p>
+  <p>
+    <span class="glyphicon glyphicon-time" aria-hidden="true"></span> It's <%= Time.now %> <br>
+
+    <span class="glyphicon glyphicon-check admin-orders" aria-hidden="true"></span> We have <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %> </a>.
+  </p>
+</div>
+
+<div id="admin-orders-panel">
+  <span class="glyphicon glyphicon-check admin-orders" aria-hidden="true"></span>
+
+
+  <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %>
+</div>
+
+<div id="admin-sales-panel">
+    <span class="glyphicon glyphicon-piggy-bank admin-orders" aria-hidden="true"></span>
+
+
+    <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %>
+</div>
+
+<div class="admin-orders-board">
+  <h3>Orders</h3>
+
+  <div class="admin-orders-list">
+    <p id="notice"><%= notice %></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Pay type</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.name %></td>
+            <td><%= order.address %></td>
+            <td><%= order.email %></td>
+            <td><%= order.pay_type %></td>
+            <td><%= link_to 'Show', order %></td>
+            <td><%= link_to 'Edit', edit_order_path(order) %></td>
+            <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Order', new_order_path %>
+
+    <p> <%= will_paginate @orders %> </p>
+  </div>
+
+</div>

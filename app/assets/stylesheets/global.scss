@@ -8,7 +8,10 @@
 body {
   margin: 0 auto;
   padding: 0;
-  margin: 0;
+}
+
+#yeild-wrapper {
+  margin: 7vh 2.5vw 5vh 2.5vh;
 }
 
 .product-button {
@@ -36,11 +39,11 @@ body {
 //-------- header --------//
 header {
   background-color: $header-color;
-  height: 10vh;
   position: fixed;
   top: 0px;
   width: 100%;
   max-height: 7vh;
+  z-index: 1;
 
 
   .nav-cart-icon {
@@ -63,28 +66,10 @@ header {
   }
 }
 
-
-
-
-.lighter-text {
-  color: #ABB0BE;
-}
-
-.main-color-text {
-  color: $main-color;
-}
-
 nav {
   padding: 20px 0 40px 0;
   font-size: 16px;
-
-  .navbar-left {
-    float: left;
-  }
-
-  .navbar-right {
-    float: right;
-  }
+  text-align: center;
   ul {
 
     li {
@@ -104,10 +89,6 @@ nav {
   }
 }
 
-.container {
-  margin: auto;
-  width: 80%;
-}
 
 .badge {
     background-color: #6394F8;
@@ -220,12 +201,13 @@ footer {
   background-color: $footer-color;
   position:fixed;
   bottom:0px;
-  height:10vh;
+  max-height: 5vh;
   width:100%;
 
   nav {
     ul {
       text-align: center;
+      line-height: .5vh;
       li {
         color: white;
         font-size: 1em;
