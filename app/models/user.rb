@@ -1,6 +1,8 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  belongs_to :orders
+
   validates :name, :presence => true, :uniqueness => true
   validates :password, :confirmation => true #validation for two passwords matching
   attr_accessor :password_confirmation
