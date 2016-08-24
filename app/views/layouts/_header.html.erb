@@ -15,7 +15,9 @@
         <% if session[:user_id] %>
           <li><%= link_to '<span class="glyphicon glyphicon-user"></span> My Account'.html_safe, admin_path %></li> <%# UPDATE LINK %>
           <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Logout'.html_safe, logout_path, :method => :delete %></li>
-          
+          <li> <a href="<%= carts_path %>">
+            <i class="fa fa-shopping-cart nav-cart-icon"></i><span class="nav-badge"> <%= @cart.total_items %> </span> </a>
+          </li>
         <% else %>
           <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, login_path %></li>
           <li><%= link_to '<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_path %></li>

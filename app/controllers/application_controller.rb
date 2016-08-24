@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :set_cart #For cart to function within header
+  before_action :set_current_cart #For cart to function within header
 
   before_action :fetch_user
   before_action :authorize
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     cart
   end
 
-  def set_cart
+  def set_current_cart
     @cart = current_cart
   end
 
