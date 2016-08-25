@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    # raise 'hell'
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: "User #{ @user.name } was successfully created" }
@@ -63,6 +63,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :hashed_password, :salt)
+      params.require(:user).permit(:name, :hashed_password, :salt, :password, :password_confirmation)
     end
 end

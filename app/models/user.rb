@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   belongs_to :orders
 
   validates :name, :presence => true, :uniqueness => true
-  validates :password, :confirmation => true #validation for two passwords matching
+  validates :password, :confirmation => true, :presence => true #validation for two passwords matching
   attr_accessor :password_confirmation
   attr_reader :password
 
