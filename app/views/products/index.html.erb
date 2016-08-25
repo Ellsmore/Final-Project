@@ -1,4 +1,12 @@
-<div class="container row product-images-wrapper">
+<div id="product-index-hero" class="container">
+  <img src="" id="hero-gif" />
+  <h2 id="homepage-hero-title">stickers for every occasion</h2>
+
+  <p>Our core range of stickers. The bad boys that stay deadly all year round. Come rain, hail, or shine.</p>
+</div>
+
+
+
   <% @products.each do |product| %>
       <article class="col-md-4 wrap">
         <figure>
@@ -10,14 +18,8 @@
           <h2><%= product.title %></h2>
           <div> <%= truncate(product.description, :length => 20) %> </div>
           <div><%= number_to_currency(product.price) %></div>
-          <button class="product-button">
-            Buy
-          </button>
 
+          <%= button_to 'Add to Cart', line_items_path(:product_id => product), :id => 'add-to-cart-button'%>
         </section>
       </article>
-
-      <%= button_to 'Add to Cart', line_items_path(:product_id => product)%>
-
   <% end  %>
-</div>

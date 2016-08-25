@@ -4,24 +4,20 @@
 <% end %>
 
 <%= form_tag do %>
-	<fieldset>
-		<legend>Please log in</legend>
+<div class='wrapper'>
+  <h1></h1>
 
-		<div>
-			<label for="name">Name:</label>
-			<%= text_field_tag :name, params[:name] %>
-		</div>
+  <img src="http://adventuretimeforum.com/jakehead.png" class='logo' id="logopic"/>
 
-		<div>
-			<label for="password">Password:</label>
-			<%= password_field_tag :password, params[:password] %>
-		</div>
+	<div class="inputs">
+		<label for="name" class="label">Name:</label>
+		<%= text_field_tag :name, params[:name] %>
 
-		<div>
-			<%= submit_tag "Login" %>
-		</div>
-	</fieldset>
+		<label for="password" class="label">Password:</label>
+		<%= password_field_tag :password, params[:password] %>
+	</div>
+
+   <%= submit_tag "Login", :class => 'sign-in-button'%>
+  <a href="" class='pass'>Forgot password?</a><a href="" class='acc'>Sign up</a>
 	<% end %>
 </div>
-
-<%# form_tag simply builds a regular HTML form (as opposed to for_for) %>

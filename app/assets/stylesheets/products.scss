@@ -1,3 +1,111 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+#product-index-hero {
+  height: 26vw;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background-color: $subheading-color;
+  margin-top: 10vh;
+  margin-bottom: 2.5vh;
+
+  h2 {
+    text-transform: uppercase;
+    color: $header-text-color;
+    font-weight: 600;
+    position: absolute;
+    font-size: 4em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 30%;
+    padding-bottom: 2vh;
+  }
+
+  p {
+    color: $header-text-color;
+    position: absolute;
+    max-width: 50vw;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 20%;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+  }
+
+  #hero-gif {
+    height: 20vh;
+    width: auto;
+  }
+}
+
+// ----- PRODUCTS INDEX ----- //
+
+.product-image {
+    max-width: 100%;
+    max-height: 22vh;
+}
+.product-images-wrapper {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10vh;
+    margin-bottom: 10vw;
+    width: 100vw;
+}
+.wrap {
+    min-height: 75vh;
+    min-width: 25vw; //Change to 25vw for 3 column display
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    overflow: hidden;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    z-index: -1;
+    background-color: $header-color;
+}
+
+.text-container {
+  color: #FFFFFF;
+
+    h2 {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 2.5em;
+      letter-spacing: .02em;
+      line-height: 1em;
+      text-transform: uppercase;
+    }
+    div {
+        font-size: 1.2em;
+        padding: 0 2vw;
+        font-weight: 500;
+    }
+
+    #add-to-cart-button {
+      padding: 1vh 1.5vw;
+      font-size: 1.5em;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: black;
+      background-color: white;
+      border: 5px solid black;
+      box-shadow: 0 9px black;
+      text-transform: uppercase;
+      font-weight: bolder;
+      position: absolute;
+      bottom: 5vh;
+      left: 9vw;
+      margin: 0 auto;
+    }
+
+    #add-to-cart-button:hover {
+      box-shadow: 0 5px black;
+      transform: translateY(4px);
+    }
+}

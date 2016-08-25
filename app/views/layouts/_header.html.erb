@@ -6,8 +6,7 @@
               <ul class="col-md-12 col-sm-12 col-xs-12">
                 <li><%= link_to '<span class="glyphicon glyphicon-home"></span> Home'.html_safe, store_path %></li>
                 <li><%= link_to '<span class="glyphicon glyphicon-tags"></span>Products'.html_safe, products_path %></li>
-                <li><%= link_to 'Orders', orders_path %></li>
-                <li><%= link_to 'Users', users_path %></li>
+                <li><%= link_to '<span class="glyphicon glyphicon-list-alt"></span>Dashboard'.html_safe, admin_path %></li>
                 <li><%= link_to '<span class="glyphicon glyphicon-user"></span> My Account'.html_safe, admin_path %></li>
                 <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Logout'.html_safe, logout_path, :method => :delete %></li>
             </ul>

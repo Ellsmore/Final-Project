@@ -1,3 +1,108 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+.wrapper {
+  padding: 0 0.2vw;
+  max-width: 320px;
+  margin: 0 auto;
+  height: 70vh;
+  border: 5px solid #000;
+  border-radius: 8px;
+  margin-top: 10vh;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10vh;
+  margin: 0 auto;
+  transition: all 1s ease;
+  height: 30vh;
+  width: auto;
+}
+
+.inputs {
+  position: absolute;
+  margin: 170px 0 0 10px;
+}
+
+input {
+  display: block;
+  outline: none;
+  background: #18191e;
+  color: #979696;
+  font-family: 'Gudea', sans-serif;
+  font-weight: bold;
+  border: none;
+  width: 280px;
+  height: 55px;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  padding: 0 0 0 10px;
+  border-radius: 2px;
+  -moz-transition: all .50s ease;
+-o-transition: all .50s ease;
+-webkit-transition: all .50s ease;
+}
+
+input:focus {
+  background: #fff;
+  border: 1px solid white;
+  color: #121317;
+  height: 51px;
+}
+
+.sign-in-button {
+  padding: 1vh 1.5vw;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #000;
+  background-color: white;
+  border: 5px solid #000;
+  box-shadow: 0 9px #000;
+  text-transform: uppercase;
+  font-weight: bolder;
+  position: absolute;
+  margin: 0 auto;
+  margin: 380px 0 0 10px;
+}
+
+.sign-in-button:hover {
+  box-shadow: 0 5px #000;
+  transform: translateY(4px);
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Gudea', sans-serif;
+  padding: 0 8px 0 0;
+  font-weight: bold;
+  font-size: 14px;
+
+}
+
+.pass {
+  margin: 450px 0 0 10px;
+  position: absolute;
+  color: #979696;
+}
+
+.acc {
+  position: absolute;
+  margin: 450px 0 0 200px;
+  color: #d29d41;
+}
+
+p {
+  font-weight: 600;
+}
+
+.label {
+  color: #000;
+}
