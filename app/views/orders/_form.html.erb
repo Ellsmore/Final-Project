@@ -27,6 +27,20 @@
     <%= f.label :payment_type %><br>
     <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => 'Select a payment method'%>
   </div>
+
+  <form action="" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_o8REPwaMO0M3AdceQgmcbPLy"
+    data-amount=  '<%= @cart.total_price * 100 %>'
+    data-name="Ellsmore"
+    data-description="Stay deadly and grab some meat"
+    data-image="https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/39/396/396567/flat_vector_shop-01-f.jpg?1426020217"
+    data-locale="auto"
+    data-zip-code="true">
+  </script>
+</form>
+
   <div class="actions">
     <%= f.submit 'Place Order'%>
   </div>
