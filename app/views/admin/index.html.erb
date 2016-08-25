@@ -14,14 +14,14 @@
   <span class="glyphicon glyphicon-check admin-orders" aria-hidden="true"></span>
 
 
-  <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %>
+  <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %> </a>.
 </div>
 
 <div id="admin-sales-panel">
     <span class="glyphicon glyphicon-piggy-bank admin-orders" aria-hidden="true"></span>
 
 
-    <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %>
+  <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %> </a>.
 </div>
 
 <div class="admin-orders-board">
@@ -33,34 +33,35 @@
     <table>
       <thead>
         <tr>
+          <th>Order</th>
+          <th>Date</th>
           <th>Name</th>
           <th>Address</th>
           <th>Email</th>
-          <th>Pay type</th>
           <th>Fulfilment Status</th>
-          <th colspan="3"></th>
+          <th>Total</th>
+          <th></th>
         </tr>
       </thead>
 
       <tbody>
         <% @orders.each do |order| %>
           <tr>
+            <td><%= order.id %></td>
+            <td><%= order.created_at.strftime("%d %b %Y, %I:%M") %></td>
             <td><%= order.name %></td>
             <td><%= order.address %></td>
             <td><%= order.email %></td>
-            <td><%= order.pay_type %></td>
             <td><%= order.status %></td>
-            <td><%= link_to 'Show', order %></td>
-            <td><%= link_to 'Edit', edit_order_path(order) %></td>
-            <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
+            <td><%= number_to_currency(@cart.total_price) %></td>
+            <td><%= link_to 'Show', order ,:class => 'show-button' %></td>
         <% end %>
       </tbody>
     </table>
 
     <br>
 
-    <%= link_to 'New Order', new_order_path %>
+    <%= link_to 'New Order', new_order_path, :class => 'red-button' %>
 
     <p> <%= will_paginate @orders %> </p>
   </div>

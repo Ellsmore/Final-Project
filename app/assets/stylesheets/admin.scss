@@ -98,5 +98,50 @@
     right: 0;
     margin: 0 auto;
     margin-top: 12vh;
+
+    table {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      color: #000;
+      font-size: 1.3em;
+      text-align: left;
+
+      th {
+        text-align: center;
+      }
+
+      td {
+        padding: 0 2.5vw 0 2.5vw;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid black;
+      }
+    }
   }
+}
+
+//---- BUTTON
+
+.red-button {
+  padding: 1%;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: $header-color;
+  border: 5px solid black;
+  box-shadow: 0 9px black;
+  text-transform: uppercase;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 10vh;
+  right: 38vw;
+}
+
+.red-button:hover {
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
+  color: #fff;
+  text-decoration: none;
 }

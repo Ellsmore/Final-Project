@@ -1,32 +1,23 @@
-<div class="product_list">
+<div class="container row product-images-wrapper">
+  <% @products.each do |product| %>
+      <article class="col-md-4 wrap">
+        <figure>
+          <a href="<%= product_path(product.id) %>">
+            <img src='<%= product.image %>' alt="some_text" class="product-image" />
+          </a>
+        </figure>
+        <section class="text-container">
+          <h2><%= product.title %></h2>
+          <div> <%= truncate(product.description, :length => 20) %> </div>
+          <div><%= number_to_currency(product.price) %></div>
+          <button class="product-button">
+            Buy
+          </button>
 
-  <h1>Listing Products</h1>
+        </section>
+      </article>
 
-  <table>
-    <% @products.each do |product| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <%= button_to 'Add to Cart', line_items_path(:product_id => product)%>
 
-      <td>
-        <%= image_tag(product.image, :class => 'list_image') %>
-      </td>
-
-      <td class="list_description">
-        <dl> <%# Description list %>
-          <dt> <%= product.title %> </dt>
-          <dd> <%= truncate(strip_tags(product.description), :length => 80) %> <%# The strip_tags() function strips a string from HTML %> </dd>
-        </dl>
-      </td>
-
-      <td class="list_actions">
-        <%= link_to 'Show', product %> <br>
-        <%= link_to 'Edit', edit_product_path(product) %> <br>
-        <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
+  <% end  %>
 </div>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>

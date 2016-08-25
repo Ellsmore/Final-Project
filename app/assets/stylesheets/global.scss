@@ -73,7 +73,7 @@ nav {
   ul {
 
     li {
-      display: inline;
+      display: inline-block;
       padding-left: 5%;
       a {
         color: $header-text-color;
@@ -88,6 +88,7 @@ nav {
     }
   }
 }
+
 
 //--------- FOOTER ---------//
 

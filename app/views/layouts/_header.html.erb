@@ -1,28 +1,37 @@
 <header>
-  <nav>
-    <div class="row">
-      <% if session[:user_id] %>
-        <% if @current_user.admin %>
-          <ul class="col-md-6 col-sm-6 col-xs-12">
-            <li> <%= link_to 'Orders', orders_path %> </li>
-            <li> <%= link_to 'Products', products_path %> </li>
-            <li> <%= link_to 'Users', users_path %> </li>
-          </ul> <!--end navbar-left -->
-        <% end %>
-      <% end %>
-
-      <ul class="col-md-6 col-sm-6 col-xs-12">
-        <% if session[:user_id] %>
-          <li><%= link_to '<span class="glyphicon glyphicon-user"></span> My Account'.html_safe, admin_path %></li> <%# UPDATE LINK %>
-          <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Logout'.html_safe, logout_path, :method => :delete %></li>
-          <li> <a href="<%= carts_path %>">
-            <i class="fa fa-shopping-cart nav-cart-icon"></i><span class="nav-badge"> <%= @cart.total_items %> </span> </a>
-          </li>
-        <% else %>
-          <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, login_path %></li>
-          <li><%= link_to '<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_path %></li>
-        <% end %>
-      </ul> <!--end navbar-right -->
-    </div> <!--end container -->
-  </nav>
+    <nav>
+      <div class="row">
+          <% if session[:user_id] %>
+            <% if @current_user.admin %>
+              <ul class="col-md-12 col-sm-12 col-xs-12">
+                <li><%= link_to '<span class="glyphicon glyphicon-home"></span> Home'.html_safe, store_path %></li>
+                <li><%= link_to '<span class="glyphicon glyphicon-tags"></span>Products'.html_safe, products_path %></li>
+                <li><%= link_to 'Orders', orders_path %></li>
+                <li><%= link_to 'Users', users_path %></li>
+                <li><%= link_to '<span class="glyphicon glyphicon-user"></span> My Account'.html_safe, admin_path %></li>
+                <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Logout'.html_safe, logout_path, :method => :delete %></li>
+            </ul>
+          <% else %>
+            <ul>
+              <li><%= link_to '<span class="glyphicon glyphicon-home"></span> Home'.html_safe, store_path %></li>
+              <li><%= link_to '<span class="glyphicon glyphicon-tags"></span>Products'.html_safe, products_path %></li>
+              <li><%= link_to '<span class="glyphicon glyphicon-user"></span> My Account'.html_safe, admin_path %></li>
+              <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Logout'.html_safe, logout_path, :method => :delete %></li>
+              <li><a href="<%= carts_path %>">
+                  <i class="fa fa-shopping-cart nav-cart-icon"></i>
+                  <span class="nav-badge"><%= @cart.total_items %></span>
+                  </a>
+              </li>
+            </ul>
+            <% end %>
+          <% else %>
+            <ul>
+              <li><%= link_to '<span class="glyphicon glyphicon-home"></span> Home'.html_safe, store_path %></li>
+              <li><%= link_to '<span class="glyphicon glyphicon-tags"></span>Products'.html_safe, products_path %></li>
+              <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, login_path %></li>
+              <li><%= link_to '<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_path %></li>
+              <% end %>
+            </ul>
+        </div>
+    </nav>
 </header>

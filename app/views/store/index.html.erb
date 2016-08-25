@@ -2,25 +2,56 @@
   <p id="notice"><%= notice %></p>
 <% end  %>
 
-<div class="container row product-images-wrapper">
-  <% @products.each do |product| %>
-      <article class="col-md-4 wrap">
-        <figure>
-          <a href="<%= product_path(product.id) %>">
-            <img src='<%= product.image %>' alt="some_text" class="product-image" />
-          </a>
-        </figure>
-        <section class="text-container">
-          <h2><%= product.title %></h2>
-          <div> <%= truncate(product.description, :length => 20) %> </div>
-          <div><%= number_to_currency(product.price) %></div>
-          <button class="product-button">
-            Buy
-          </button>
+<div id="homepage-hero" class="container">
+  <h2>great products live here</h2>
 
-        </section>
-      </article>
 
-      <%= button_to 'Add to Cart', line_items_path(:product_id => product)%>
-  <% end  %>
+</div>
+
+<button class="white-button">See the beers</button>
+
+<div id="homepage-hero-two" class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>lorem ipsum</h2>
+
+      <p>These products are tougher than woodpecker lips and are guaranteed to make anyone go off like a cut snake</p>
+
+      <button>read on</button>
+    </div>
+
+    <div class="col-md-4" id="homepage-hero-two-center">
+      <h2>lorem ipsum</h2>
+
+      <p>These products are tougher than woodpecker lips and are guaranteed to make anyone go off like a cut snake</p>
+
+      <button>read on</button>
+    </div>
+
+    <div class="col-md-4">
+      <h2>lorem ipsum</h2>
+
+      <p>These products are tougher than woodpecker lips and are guaranteed to make anyone go off like a cut snake</p>
+
+      <button>read on</button>
+    </div>
+
+  </div>
+</div>
+
+<div id="homepage-hero-three" class="container">
+  <div class="row">
+    <div class="col-md-8">
+
+    </div>
+
+    <div class="col-md-4">
+      <h2>lorem ipsum</h2>
+
+      <p>These products are tougher than woodpecker lips and are guaranteed to make anyone go off like a cut snake</p>
+
+      <button>read on</button>
+    </div>
+  </div>
+
 </div>
