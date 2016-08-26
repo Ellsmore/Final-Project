@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160825203638) do
     t.datetime "updated_at",                         null: false
     t.string   "status",     default: "unfulfilled"
     t.integer  "user_id"
+    t.string   "pay_type"
   end
 
   create_table "products", force: :cascade do |t|

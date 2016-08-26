@@ -58,7 +58,7 @@
 }
 .wrap {
     min-height: 75vh;
-    min-width: 25vw; //Change to 25vw for 3 column display
+    max-width: 30.5vw; //Change to 25vw for 3 column display
     position: relative;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     overflow: hidden;
@@ -67,6 +67,7 @@
     padding-left: 0;
     z-index: -1;
     background-color: $header-color;
+    margin: 5px;
 }
 
 .text-container {
@@ -100,7 +101,7 @@
       font-weight: bolder;
       position: absolute;
       bottom: 5vh;
-      left: 9vw;
+      left: 4vw;
       margin: 0 auto;
     }
 

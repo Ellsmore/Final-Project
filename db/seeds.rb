@@ -45,26 +45,26 @@ Product.create(:title=>"Product 6", :description=>"Lorem ipsum dolor sit amet, c
 
 Order.destroy_all
 
-Order.create(:name=> 'user111', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user111', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user112', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user112', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user113', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user113', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user114', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user114', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user115', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user115', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user116', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user116', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user117', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user117', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user118', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user118', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user119', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user119', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user1110', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user1110', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user1111', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user1111', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')
 
-Order.create(:name=> 'user1112', :address=> '2 test rd, testville', :email => 'test@test.com')
+Order.create(:name=> 'user1112', :address=> '2 test rd, testville', :email => 'test@test.com', :pay_type => 'credit card')

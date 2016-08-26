@@ -33,9 +33,9 @@
 }
 
 #hero-products {
-  height: 10vh;
   position: relative;
   width: 100vw;
+  padding-bottom: 10vh;
 
   li {
     display: inline-block;
@@ -59,12 +59,16 @@
     padding-top: 3vh;
   }
 
+  img {
+    max-height: 20vh;
+  }
+
   #hero-image-one {
     left: 1vw;
   }
 
   #hero-image-two {
-    left: 16.67vw;
+    left: 13vw;
   }
 
   #hero-image-three {
@@ -72,15 +76,15 @@
   }
 
   #hero-image-four {
-    right: 33.33vw;
+    right: 40vw;
   }
 
   #hero-image-five {
-    right: 16.67vw;
+    right: 25vw;
   }
 
   #hero-image-six {
-    right: 2vw;
+    right: 7vw;
   }
 }
 

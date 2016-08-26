@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.add_line_items_from_cart(current_cart) 
+    @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
       if @order.save
@@ -34,6 +34,7 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
         format.html { redirect_to store_url, notice: 'Thank you for your order!' }
         format.json { render :show, status: :created, location: @order }
+        #UserMailer.welcome_email(@user).deliver
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
