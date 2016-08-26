@@ -6,7 +6,7 @@
   <p>
     <span class="glyphicon glyphicon-time" aria-hidden="true"></span> It's <%= Time.now %> <br>
 
-    <span class="glyphicon glyphicon-check admin-orders" aria-hidden="true"></span> We have <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %> </a>.
+    <span class="glyphicon glyphicon-check admin-orders" aria-hidden="true"></span> We have <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %> </a>
   </p>
 </div>
 
@@ -21,7 +21,7 @@
     <span class="glyphicon glyphicon-piggy-bank admin-orders" aria-hidden="true"></span>
 
 
-  <a href=" <%= orders_path %> "> <%= pluralize(@total_orders, 'order') %> </a>.
+   <%= @grand_orders_total %>
 </div>
 
 <div class="admin-orders-board">
@@ -39,13 +39,12 @@
           <th>Address</th>
           <th>Email</th>
           <th>Fulfilment Status</th>
-          <th>Total</th>
           <th></th>
         </tr>
       </thead>
 
       <tbody>
-        <% @orders.each do |order| %>
+        <% @orders.reverse_each do |order| %>
           <tr>
             <td><%= order.id %></td>
             <td><%= order.created_at.strftime("%d %b %Y, %I:%M") %></td>
@@ -53,7 +52,6 @@
             <td><%= order.address %></td>
             <td><%= order.email %></td>
             <td><%= order.status %></td>
-            <td><%= number_to_currency(@cart.total_price) %></td>
             <td><%= link_to 'Show', order ,:class => 'show-button' %></td>
         <% end %>
       </tbody>

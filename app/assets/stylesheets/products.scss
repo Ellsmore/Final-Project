@@ -66,8 +66,32 @@
     padding-right: 0;
     padding-left: 0;
     z-index: -1;
-    background-color: $header-color;
+    //background-color: $header-color;
     margin: 5px;
+}
+
+.product_color0 {
+  background-color: $header-color;
+}
+
+.product_color1 {
+  background-color: #00BCB4;
+}
+
+.product_color2 {
+  background-color: #F9E32C;
+}
+
+.product_color3 {
+  background-color: #004E95;
+}
+
+.product_color4 {
+  background-color: #FF9E19;
+}
+
+.product_color5 {
+  background-color: #303030;
 }
 
 .text-container {

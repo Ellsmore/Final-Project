@@ -1,5 +1,5 @@
 <div id="product-index-hero" class="container">
-  <img src="" id="hero-gif" />
+  <img src="http://i34.photobucket.com/albums/d127/otaku_tatu/adventuretimelogo.png" id="hero-gif" />
   <h2 id="homepage-hero-title">stickers for every occasion</h2>
 
   <p>Our core range of stickers. The bad boys that stay deadly all year round. Come rain, hail, or shine.</p>
@@ -7,8 +7,8 @@
 
 
 
-  <% @products.each do |product| %>
-      <article class="col-md-4 wrap">
+  <% @products.each_with_index do |product, index| %>
+      <article class="col-md-4 wrap product_color<%= (index % 6) %>">
         <figure>
           <a href="<%= product_path(product.id) %>">
             <img src='<%= product.image %>' alt="some_text" class="product-image" />

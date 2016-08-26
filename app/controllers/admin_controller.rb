@@ -3,11 +3,15 @@ class AdminController < ApplicationController
 
   def index
     @total_orders = Order.count
-  end
-
-  def index
-    @orders = Order.paginate(:page=>params[:page], :per_page => 1)
+    @orders = Order.paginate(:page=>params[:page], :per_page => 5)
     @cart = current_cart
+
+    all_line_items = LineItem.all
+    @grand_orders_total = 0.0
+    all_line_items.each do |lineitem|
+      @grand_orders_total += lineitem.quantity * lineitem.product.price * Order.count
+    end
+
   end
 
   def show

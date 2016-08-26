@@ -31,7 +31,7 @@ User.create(:name => 'user12', :password => 'chicken', :password_confirmation =>
 
 Product.destroy_all
 
-Product.create(:title=>"Product 1", :description=>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", :price=>"12.95", :image=>"test.jpg")
+Product.create(:title=>"Product 1", :description=>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", :price=>"12.00", :image=>"http://vignette4.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/Original_Finn.png/revision/latest?cb=20120921151658")
 
 Product.create(:title=>"Product 2", :description=>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", :price=>"12.95", :image=>"test.jpg")
 

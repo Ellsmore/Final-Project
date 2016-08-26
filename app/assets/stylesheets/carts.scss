@@ -5,7 +5,7 @@
 @import "variables";
 
 .badge {
-    background-color: #6394F8;
+    background-color: $header-color;
     border-radius: 10px;
     color: white;
     display: inline-block;
@@ -25,6 +25,7 @@
   width: 320px;
   border-radius: 3px;
   padding: 20px;
+  border: 1px solid #000;
 
 
   .shopping-cart-header {
@@ -37,17 +38,13 @@
   }
 
   .shopping-cart-items {
+    display: inline-block;
 
-    padding-top: 20px;
 
       li {
         margin-bottom: 18px;
+        margin-left: 0;
       }
-
-    img {
-      float: left;
-      margin-right: 12px;
-    }
 
     .item-name {
       display: block;
@@ -56,7 +53,8 @@
     }
 
     .item-price {
-      color: $main-color;
+      color: $header-color;
+      font-weight: 600;
       margin-right: 8px;
     }
 
@@ -82,24 +80,26 @@
 }
 
 .cart-icon {
-  color: #515783;
+  color: #000;
   font-size: 24px;
   margin-right: 7px;
 }
 
 .button {
-  background: $main-color;
-  color:white;
+  background: #fff;
+  color:#000;
   text-align: center;
   padding: 12px;
   text-decoration: none;
   display: block;
   border-radius: 3px;
+  border: 5px solid black;
   font-size: 16px;
   margin: 25px 0 15px 0;
 
   &:hover {
-    background: lighten($main-color, 3%);
+    background: lighten($header-color, 3%);
+    color: lighten(#fff, 3%);
   }
 }
 
